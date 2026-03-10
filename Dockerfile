@@ -30,6 +30,8 @@ ARG KUBE_VERSION="1.22"
 LABEL maintainer="Jonathan Gao <gsmlg.com@gmail.com>"
 LABEL kubernetes_version="${KUBE_VERSION}"
 
+LABEL org.opencontainers.image.source="https://github.com/gsmlg-ci/kubectl"
+
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
 
 ENTRYPOINT ["/usr/local/bin/kubectl"]
